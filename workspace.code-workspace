@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../../yi-admin/RemixYought"
+	},
+	{
+		"path": "."
+	}
+],
+  "settings": {
+    "git.ignoreLimitWarning": true
+  }
+}
