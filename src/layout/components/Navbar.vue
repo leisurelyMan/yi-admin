@@ -23,13 +23,14 @@
           <a target="_blank" href="https://github.com/RemixYought/yi-admin/">
             <el-dropdown-item>Github</el-dropdown-item>
           </a>
-          <a
+          <!-- <a
             target="_blank"
             href="https://panjiachen.github.io/vue-element-admin-site/#/"
           >
             <el-dropdown-item>Docs</el-dropdown-item>
-          </a>
-          <el-dropdown-item divided @click.native="logout">
+          </a> -->
+          <el-dropdown-item @click.native="logout">
+            <!-- divided -->
             <span style="display:block;">Log Out</span>
           </el-dropdown-item>
         </el-dropdown-menu>
