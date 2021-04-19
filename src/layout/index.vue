@@ -16,9 +16,9 @@
     </div>
     <sidebar class="sidebar-container" />
     <div class="main-container">
-      <!-- <div :class="{ 'fixed-header': fixedHeader }">
+      <div :class="{ 'fixed-header': fixedHeader }">
         <navbar />
-      </div> -->
+      </div>
       <app-main />
     </div>
   </div>
@@ -97,6 +97,7 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 999;
     .show-logo {
       width: 210px;
       vertical-align: middle;
