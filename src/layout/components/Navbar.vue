@@ -1,40 +1,45 @@
 <template>
   <div class="navbar">
-    <hamburger
-      :is-active="sidebar.opened"
-      class="hamburger-container"
-      @toggleClick="toggleSideBar"
-    />
-
-    <breadcrumb class="breadcrumb-container" />
-
-    <div class="right-menu">
-      <el-dropdown class="avatar-container" trigger="click">
-        <div class="avatar-wrapper">
-          <img :src="avatar + '?imageView2/1/w/80/h/80'" class="user-avatar" />
-          <i class="el-icon-caret-bottom" />
-        </div>
-        <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <router-link to="/">
-            <el-dropdown-item>
-              Home
-            </el-dropdown-item>
-          </router-link>
-          <a target="_blank" href="https://github.com/RemixYought/yi-admin/">
-            <el-dropdown-item>Github</el-dropdown-item>
-          </a>
-          <!-- <a
+    <div class="navbar-top">
+      <div class="right-menu">
+        <el-dropdown class="avatar-container" trigger="click">
+          <div class="avatar-wrapper">
+            <img
+              :src="avatar + '?imageView2/1/w/80/h/80'"
+              class="user-avatar"
+            />
+            <i class="el-icon-caret-bottom" />
+          </div>
+          <el-dropdown-menu slot="dropdown" class="user-dropdown">
+            <router-link to="/">
+              <el-dropdown-item>
+                Home
+              </el-dropdown-item>
+            </router-link>
+            <a target="_blank" href="https://github.com/RemixYought/yi-admin/">
+              <el-dropdown-item>Github</el-dropdown-item>
+            </a>
+            <!-- <a
             target="_blank"
             href="https://panjiachen.github.io/vue-element-admin-site/#/"
           >
             <el-dropdown-item>Docs</el-dropdown-item>
           </a> -->
-          <el-dropdown-item @click.native="logout">
-            <!-- divided -->
-            <span style="display:block;">Log Out</span>
-          </el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
+            <el-dropdown-item @click.native="logout">
+              <!-- divided -->
+              <span style="display:block;">Log Out</span>
+            </el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
+    </div>
+    <div class="navbar-bottom">
+      <hamburger
+        :is-active="sidebar.opened"
+        class="hamburger-container"
+        @toggleClick="toggleSideBar"
+      />
+      <breadcrumb class="breadcrumb-container" />
     </div>
   </div>
 </template>
@@ -66,12 +71,22 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  height: 50px;
+  height: 100px;
   overflow: hidden;
   position: relative;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-
+  display: flex;
+  flex-direction: column;
+  .navbar-top {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(#fff, #f0f0f0);
+  }
+  .navbar-bottom {
+    width: 100%;
+    height: 50px;
+  }
   .hamburger-container {
     line-height: 46px;
     height: 100%;
