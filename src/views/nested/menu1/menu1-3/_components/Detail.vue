@@ -22,7 +22,7 @@
           content="上传机构Logo后，将在该机构下的客户AI-MDT报告封面进行展示"
           placement="right"
         >
-          <i class="icon el-icon-info"></i>
+          <i class="icon el-icon-question"></i>
         </el-tooltip>
       </div>
     </div>
