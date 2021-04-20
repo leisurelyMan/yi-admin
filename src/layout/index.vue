@@ -99,14 +99,14 @@ export default {
     left: 0;
     z-index: 999;
     .show-logo {
-      width: 210px;
+      width: 360px;
       vertical-align: middle;
       .sidebar-logo {
         cursor: pointer;
       }
     }
     .show-logo img {
-      width: 100%;
+      // width: 100%;
       height: 50px;
     }
     .sidebar-user {
