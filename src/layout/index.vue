@@ -1,10 +1,10 @@
 <template>
   <div :class="classObj" class="app-wrapper">
-    <!-- <div
+    <div
       v-if="device === 'mobile' && sidebar.opened"
       class="drawer-bg"
       @click="handleClickOutside"
-    /> -->
+    />
     <div class="header">
       <div class="show-logo">
         <img :src="logoIcon" class="sidebar-logo" />
