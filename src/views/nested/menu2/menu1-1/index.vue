@@ -53,4 +53,8 @@ export default {
   padding: 20px 20px 0;
   border-radius: 5px;
 }
+/* ::v-deep .el-tabs__item is-top {
+  min-width: 240px;
+  text-align: center;
+} */
 </style>

@@ -7,7 +7,7 @@
     />
     <div class="header">
       <div class="show-logo">
-        <!-- <img :src="logoIcon" class="sidebar-logo" /> -->
+        <img :src="logoIcon" class="sidebar-logo" />
       </div>
       <div class="sidebar-user">
         <span>欢迎发行人</span>
