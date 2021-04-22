@@ -7,7 +7,7 @@
     />
     <div class="header">
       <div class="show-logo">
-        <img :src="logoIcon" class="sidebar-logo" />
+        <!-- <img :src="logoIcon" class="sidebar-logo" /> -->
       </div>
       <div class="sidebar-user">
         <span>欢迎发行人</span>
@@ -66,7 +66,6 @@ export default {
     },
     async logout() {
       await this.$store.dispatch("user/logout");
-      console.log(111);
       this.$router.push(`/login?redirect=${this.$route.fullPath}`);
     },
   },
