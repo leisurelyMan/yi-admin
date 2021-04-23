@@ -1,12 +1,12 @@
 <template>
   <div style="padding:10px;">
-    <el-form ref="form" :model="form" label-width="160px">
+    <el-form ref="form" :model="form" label-width="180px">
       <el-form-item
         prop="name"
         label="项目名称"
         :rules="[{ required: true, message: '活动名称不能为空' }]"
       >
-        <el-col :span="11">
+        <el-col :span="12">
           <el-input v-model="form.name"></el-input>
         </el-col>
       </el-form-item>
@@ -15,7 +15,7 @@
         label="项目公司名称"
         :rules="[{ required: true, message: '活动名称不能为空' }]"
       >
-        <el-col :span="11">
+        <el-col :span="12">
           <el-input v-model="form.company"></el-input>
         </el-col>
       </el-form-item>
@@ -34,12 +34,12 @@
         label="总投资金额（万元）"
         :rules="[{ required: true, message: '总投资金额不能为空' }]"
       >
-        <el-col :span="11">
+        <el-col :span="12">
           <el-input v-model.number="form.money"></el-input>
         </el-col>
       </el-form-item>
       <el-form-item label="项目建设内容">
-        <el-col :span="11">
+        <el-col :span="12">
           <el-input type="textarea" v-model="form.desc"></el-input>
         </el-col>
       </el-form-item>
@@ -65,7 +65,7 @@
         </el-select>
       </el-form-item>
       <el-form-item label="活动开工日期">
-        <el-col :span="11">
+        <el-col :span="12">
           <el-date-picker
             type="date"
             placeholder="选择日期"
@@ -75,7 +75,7 @@
         </el-col>
       </el-form-item>
       <el-form-item label="活动完工日期">
-        <el-col :span="11">
+        <el-col :span="12">
           <el-date-picker
             type="date"
             placeholder="选择日期"
@@ -85,12 +85,12 @@
         </el-col>
       </el-form-item>
       <el-form-item prop="fundRaising" label="拟使用募集资金（万元）">
-        <el-col :span="11">
+        <el-col :span="12">
           <el-input v-model.number="form.fundRaising"></el-input>
         </el-col>
       </el-form-item>
       <el-form-item label="募集资金用途" prop="deliveryWay">
-        <el-col :span="11">
+        <el-col :span="12">
           <el-checkbox-group v-model="form.deliveryWay">
             <el-checkbox label="建设" name="type"></el-checkbox>
             <el-checkbox label="运营" name="type"></el-checkbox>

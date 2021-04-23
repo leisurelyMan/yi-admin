@@ -44,15 +44,7 @@ export default {
 .line {
   text-align: center;
 }
-::v-deep .el-tabs--border-card {
-  border-top: none;
-}
-::v-deep .el-tabs--border-card > .el-tabs__header {
-  background-color: #444;
-  box-sizing: border-box;
-  padding: 20px 20px 0;
-  border-radius: 5px;
-}
+
 /* ::v-deep .el-tabs__item is-top {
   min-width: 240px;
   text-align: center;

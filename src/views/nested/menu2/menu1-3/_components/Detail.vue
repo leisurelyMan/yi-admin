@@ -18,7 +18,7 @@
         <div class="row-item">总投资金额(万元):</div>
         <div class="row-item">{{ detail.amount }}</div>
         <el-tooltip
-          effect="dark"
+          effect="light"
           content="上传机构Logo后，将在该机构下的客户AI-MDT报告封面进行展示"
           placement="right"
         >
