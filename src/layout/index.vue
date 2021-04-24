@@ -10,7 +10,7 @@
         <img :src="logoIcon" class="sidebar-logo" />
       </div>
       <div class="sidebar-user">
-        <span>欢迎发行人</span>
+        <span>欢迎{{ name }}</span>
         <span @click="logout" class="border-r">退出</span>
       </div>
     </div>
@@ -28,6 +28,7 @@
 import { Navbar, Sidebar, AppMain } from "./components";
 import ResizeMixin from "./mixin/ResizeHandler";
 import logoIcon from "@/assets/404_images/logo.png";
+import { mapGetters } from "vuex";
 export default {
   name: "Layout",
   components: {
@@ -54,6 +55,7 @@ export default {
         mobile: this.device === "mobile",
       };
     },
+    ...mapGetters(["name"]),
   },
   data() {
     return {

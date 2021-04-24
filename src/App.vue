@@ -56,4 +56,10 @@ export default {
 ::v-deep .el-tabs--border-card > .el-tabs__header .el-tabs__item {
   color: #fff;
 }
+::v-deep
+  .el-tabs--border-card
+  > .el-tabs__header
+  .el-tabs__item:not(.is-disabled):hover {
+  // color: #fff;
+}
 </style>

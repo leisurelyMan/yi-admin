@@ -113,6 +113,33 @@ export const constantRoutes = [
           },
         ],
       },
+      {
+        path: "InstitutionalData",
+        component: () => import("@/views/nested/InstitutionalData/index"),
+        name: "InstitutionalData",
+        meta: { title: "数据流程" },
+        children: [
+          {
+            path: "Filing",
+            component: () => import("@/views/nested/InstitutionalData/Filing"),
+            name: "Filing",
+            meta: { title: "建档期1" },
+          },
+          {
+            path: "FilingBefore",
+            component: () =>
+              import("@/views/nested/InstitutionalData/FilingBefore"),
+            name: "FilingBefore",
+            meta: { title: "建档前" },
+          },
+          {
+            path: "Filing2",
+            component: () => import("@/views/nested/InstitutionalData/Filing2"),
+            name: "Filing2",
+            meta: { title: "建档期2" },
+          },
+        ],
+      },
     ],
   },
   {
