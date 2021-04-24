@@ -50,4 +50,10 @@ export default {
 ::v-deep .el-button {
   min-width: 120px;
 }
+::v-deep .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
+  color: #333;
+}
+::v-deep .el-tabs--border-card > .el-tabs__header .el-tabs__item {
+  color: #fff;
+}
 </style>

@@ -71,7 +71,7 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  height: 100px;
+  height: 130px;
   overflow: hidden;
   position: relative;
   background: #fff;
@@ -80,7 +80,7 @@ export default {
   flex-direction: column;
   .navbar-top {
     width: 100%;
-    height: 50px;
+    height: 80px;
     background: linear-gradient(#fff, #f0f0f0);
   }
   .navbar-bottom {

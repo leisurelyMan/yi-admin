@@ -88,7 +88,7 @@ export default {
   .header {
     width: 100%;
     display: flex;
-    height: 50px;
+    height: 80px;
     background: linear-gradient(#fff, #f0f0f0);
     justify-content: space-between;
     box-sizing: border-box;
@@ -97,6 +97,7 @@ export default {
     top: 0;
     left: 0;
     z-index: 999;
+    align-items: center;
     .show-logo {
       width: 360px;
       vertical-align: middle;

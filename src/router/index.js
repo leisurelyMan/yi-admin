@@ -58,6 +58,64 @@ export const constantRoutes = [
   },
 
   {
+    path: "/nested",
+    component: Layout,
+    redirect: "/nested/menu1",
+    name: "Nested",
+    meta: {
+      title: "产品",
+      icon: "nested",
+    },
+    children: [
+      {
+        path: "menu2",
+        component: () => import("@/views/nested/menu2/index"), // Parent router-view
+        name: "Menu1",
+        meta: { title: "数据录入" },
+        children: [
+          {
+            path: "menu1-1",
+            component: () => import("@/views/nested/menu2/menu1-1"),
+            name: "Menu1-1",
+            meta: { title: "建档期1" },
+          },
+          {
+            path: "menu1-2",
+            component: () => import("@/views/nested/menu2/menu1-2"),
+            name: "Menu1-2",
+            meta: { title: "建档前" },
+          },
+          {
+            path: "menu1-3",
+            component: () => import("@/views/nested/menu2/menu1-3"),
+            name: "Menu1-3",
+            meta: { title: "建档期2" },
+          },
+        ],
+      },
+      {
+        path: "menu1",
+        component: () => import("@/views/nested/menu1/index"),
+        name: "Menu2",
+        meta: { title: "数据展示" },
+        children: [
+          {
+            path: "menu1-1",
+            component: () => import("@/views/nested/menu1/menu1-1"),
+            name: "Menu1-1",
+            meta: { title: "建档期1" },
+          },
+          {
+            path: "menu1-3",
+            component: () => import("@/views/nested/menu1/menu1-3"),
+            name: "Menu1-3",
+            meta: { title: "建档前" },
+          },
+        ],
+      },
+    ],
+  },
+  {
     path: "/example",
     component: Layout,
     redirect: "/example/table",
@@ -88,59 +146,6 @@ export const constantRoutes = [
         name: "Form",
         component: () => import("@/views/form/index"),
         meta: { title: "Form", icon: "form" },
-      },
-    ],
-  },
-
-  {
-    path: "/nested",
-    component: Layout,
-    redirect: "/nested/menu1",
-    name: "Nested",
-    meta: {
-      title: "产品",
-      icon: "nested",
-    },
-    children: [
-      {
-        path: "menu2",
-        component: () => import("@/views/nested/menu2/index"), // Parent router-view
-        name: "Menu1",
-        meta: { title: "数据录入" },
-        children: [
-          {
-            path: "menu1-1",
-            component: () => import("@/views/nested/menu2/menu1-1"),
-            name: "Menu1-1",
-            meta: { title: "建档期1" },
-          },
-          {
-            path: "menu1-3",
-            component: () => import("@/views/nested/menu2/menu1-3"),
-            name: "Menu1-3",
-            meta: { title: "建档前" },
-          },
-        ],
-      },
-      {
-        path: "menu1",
-        component: () => import("@/views/nested/menu1/index"),
-        name: "Menu2",
-        meta: { title: "数据展示" },
-        children: [
-          {
-            path: "menu1-1",
-            component: () => import("@/views/nested/menu1/menu1-1"),
-            name: "Menu1-1",
-            meta: { title: "建档期1" },
-          },
-          {
-            path: "menu1-3",
-            component: () => import("@/views/nested/menu1/menu1-3"),
-            name: "Menu1-3",
-            meta: { title: "建档前" },
-          },
-        ],
       },
     ],
   },
