@@ -14,13 +14,13 @@
           <h3 class="title">欢迎登录</h3>
         </div>
 
-        <el-form-item prop="username">
+        <el-form-item prop="address">
           <span class="svg-container">
             <svg-icon icon-class="user" />
           </span>
           <el-input
             ref="username"
-            v-model="loginForm.username"
+            v-model="loginForm.address"
             placeholder="Username"
             name="username"
             type="text"
@@ -29,14 +29,14 @@
           />
         </el-form-item>
 
-        <el-form-item prop="password">
+        <el-form-item prop="privateKey">
           <span class="svg-container">
             <svg-icon icon-class="password" />
           </span>
           <el-input
             :key="passwordType"
             ref="password"
-            v-model="loginForm.password"
+            v-model="loginForm.privateKey"
             :type="passwordType"
             placeholder="Password"
             name="password"
@@ -75,11 +75,11 @@ export default {
   name: "Login",
   data() {
     const validateUsername = (rule, value, callback) => {
-      if (!validUsername(value)) {
-        callback(new Error("Please enter the correct user name"));
-      } else {
-        callback();
-      }
+      // if (!validUsername(value)) {
+      //   callback(new Error("Please enter the correct user name"));
+      // } else {
+      //   callback();
+      // }
     };
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
@@ -90,14 +90,15 @@ export default {
     };
     return {
       loginForm: {
-        username: "admin",
-        password: "111111",
+        address: "publisher",
+        privateKey:
+          "11923539375679845325252228777242960192055190129810004269861387854185139068213 ",
       },
       loginRules: {
-        username: [
+        address: [
           { required: true, trigger: "blur", validator: validateUsername },
         ],
-        password: [
+        privateKey: [
           { required: true, trigger: "blur", validator: validatePassword },
         ],
       },
@@ -126,23 +127,27 @@ export default {
       });
     },
     handleLogin() {
-      this.$refs.loginForm.validate((valid) => {
-        if (valid) {
-          this.loading = true;
-          this.$store
-            .dispatch("user/login", this.loginForm)
-            .then(() => {
-              this.$router.push({ path: this.redirect || "/" });
-              this.loading = false;
-            })
-            .catch(() => {
-              this.loading = false;
-            });
-        } else {
-          console.log("error submit!!");
-          return false;
-        }
-      });
+      // this.$refs.loginForm.validate((valid) => {
+      //   console.log(111);
+      //   if (valid) {
+      //     console.log(222);
+      this.loading = true;
+      this.$store
+        .dispatch("user/login", this.loginForm)
+        .then(() => {
+          this.$router.push({ path: this.redirect || "/" });
+          this.loading = false;
+        })
+        .catch((err) => {
+          console.log(err);
+          this.loading = false;
+        });
+      //   } else {
+      //     console.log("error submit!!");
+      //     return false;
+      //   }
+      // });
+      // console.log(555);
     },
   },
 };
