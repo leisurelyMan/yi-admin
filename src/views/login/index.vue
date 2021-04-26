@@ -92,7 +92,7 @@ export default {
       loginForm: {
         address: "publisher",
         privateKey:
-          "11923539375679845325252228777242960192055190129810004269861387854185139068213 ",
+          "11923539375679845325252228777242960192055190129810004269861387854185139068213",
       },
       loginRules: {
         address: [
@@ -133,6 +133,7 @@ export default {
       this.$store
         .dispatch("user/login", this.loginForm)
         .then(() => {
+          console.log(222);
           this.$router.push({ path: this.redirect || "/" });
           this.loading = false;
         })

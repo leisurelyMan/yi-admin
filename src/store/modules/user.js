@@ -30,16 +30,13 @@ const mutations = {
 const actions = {
   // user login
   login({ commit }, userInfo) {
-    console.log(userInfo);
-    // const { _address, _privateKey } = userInfo;
     const _address = userInfo.address;
     const _privateKey = userInfo.privateKey;
     return new Promise((resolve, reject) => {
-      login({ address: _address, privateKey: _privateKey })
+      login({ address: _address.trim(), privateKey: _privateKey.trim() })
         .then((response) => {
-          const { data } = response;
-          commit("SET_TOKEN", data.token);
-          setToken(data.token);
+          commit("SET_TOKEN", response.jwtToken);
+          setToken(response.jwtToken);
           resolve();
         })
         .catch((error) => {
@@ -54,13 +51,10 @@ const actions = {
       getInfo(state.token)
         .then((response) => {
           const { data } = response;
-
           if (!data) {
             return reject("Verification failed, please Login again.");
           }
-
           const { name, avatar } = data;
-
           commit("SET_NAME", name);
           commit("SET_AVATAR", avatar);
           resolve(data);
