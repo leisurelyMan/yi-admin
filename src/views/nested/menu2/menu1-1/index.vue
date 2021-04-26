@@ -3,12 +3,13 @@
     <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick">
       <el-tab-pane label="募投项目基本信息" name="first">
         <div v-for="(item, index) in dataArray" :key="index">
-          <Form
-            @submit="submitForm"
-            :ref="`form${index}`"
-            :detail="item"
-            @add="addForm"
-          />
+          <!-- @submit="submitForm" -->
+          <Form :ref="`form${index}`" :detail="item" @add="addForm" />
+        </div>
+        <div style="padding-left:250px">
+          <el-button type="primary" @click="submitForm('form')">确定</el-button>
+          <el-button @click="resetForm('form')">重置</el-button>
+          <el-button @click="addForm('form')">添加项目</el-button>
         </div>
       </el-tab-pane>
       <el-tab-pane label="考核指标情况" name="second"
@@ -131,6 +132,9 @@ export default {
         updateTime: "",
       };
       this.dataArray.push(_form);
+    },
+    resetForm() {
+      Object.assign(this.$data, this.$options.data());
     },
   },
 };

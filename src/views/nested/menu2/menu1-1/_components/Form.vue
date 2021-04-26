@@ -114,11 +114,11 @@
           </div>
         </el-upload>
       </el-form-item>
-      <el-form-item>
+      <!-- <el-form-item>
         <el-button type="primary" @click="submitForm('form')">确定</el-button>
         <el-button @click="resetForm('form')">重置</el-button>
         <el-button @click="addForm('form')">添加项目</el-button>
-      </el-form-item>
+      </el-form-item> -->
     </el-form>
   </div>
 </template>
