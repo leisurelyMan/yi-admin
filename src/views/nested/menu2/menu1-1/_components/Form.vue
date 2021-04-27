@@ -4,7 +4,7 @@
       <el-form-item
         prop="name"
         label="项目名称"
-        :rules="[{ required: true, message: '活动名称不能为空' }]"
+        :rules="[{ required: true, message: '项目名称不能为空' }]"
       >
         <el-col :span="12">
           <el-input v-model="form.projectName"></el-input>
@@ -13,7 +13,7 @@
       <el-form-item
         prop="companyName"
         label="项目公司名称"
-        :rules="[{ required: true, message: '活动名称不能为空' }]"
+        :rules="[{ required: true, message: '项目公司名称不能为空' }]"
       >
         <el-col :span="12">
           <el-input v-model="form.companyName"></el-input>

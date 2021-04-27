@@ -46,9 +46,9 @@ service.interceptors.response.use(
    */
   (response) => {
     const res = response.data;
-
+    const legalCode = [100, 200]; // 合法的返回码
     // if the custom code is not 20000, it is judged as an error.
-    if (res.code !== 200) {
+    if (!legalCode.includes(res.code)) {
       Message({
         message: res.message || "Error",
         type: "error",

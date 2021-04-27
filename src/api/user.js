@@ -30,7 +30,7 @@ export function getProjectBase(data) {
 export function logout(data) {
   return request({
     url: "/logout",
-    method: "post",
+    method: "get",
     data,
   });
 }
