@@ -19,7 +19,7 @@ export default {
       value: { field1: "111", field2: "222", time: "11:11:11" },
       options: {
         onSubmit: (formData) => {
-          alert(JSON.stringify(formData));
+          console.log(JSON.stringify(formData));
         },
       },
       rule: [
