@@ -874,6 +874,88 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@form-create/component-elm-checkbox@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.npm.taobao.org/@form-create/component-elm-checkbox/download/@form-create/component-elm-checkbox-2.5.2.tgz#42caf02d75f22464bdde00493a5f96c566c2ce63"
+  integrity sha1-QsrwLXXyJGS93gBJOl+WxWbCzmM=
+  dependencies:
+    "@form-create/utils" "^2.5.0-alpha.4"
+
+"@form-create/component-elm-frame@^2.5.4":
+  version "2.5.4"
+  resolved "https://registry.npm.taobao.org/@form-create/component-elm-frame/download/@form-create/component-elm-frame-2.5.4.tgz#6b7c1df817ebcd70223f5f11fc5156f2acc43757"
+  integrity sha1-a3wd+BfrzXAiP18R/FFW8qzEN1c=
+  dependencies:
+    "@form-create/utils" "^2.5.0-alpha.4"
+
+"@form-create/component-elm-group@^2.5.4":
+  version "2.5.4"
+  resolved "https://registry.npm.taobao.org/@form-create/component-elm-group/download/@form-create/component-elm-group-2.5.4.tgz#43486547e8f1411af643b80897038bce0221eb59"
+  integrity sha1-Q0hlR+jxQRr2Q7gIlwOLzgIh61k=
+  dependencies:
+    "@form-create/utils" "^2.5.0-alpha.4"
+
+"@form-create/component-elm-radio@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.npm.taobao.org/@form-create/component-elm-radio/download/@form-create/component-elm-radio-2.5.2.tgz#84e2f572aa5b6527fca7480bc4394586c3fbbbfd"
+  integrity sha1-hOL1cqpbZSf8p0gLxDlFhsP7u/0=
+  dependencies:
+    "@form-create/utils" "^2.5.0-alpha.4"
+
+"@form-create/component-elm-select@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.npm.taobao.org/@form-create/component-elm-select/download/@form-create/component-elm-select-2.5.2.tgz#8d1fe9d48570a3cae7119e2e292a644089cca9b9"
+  integrity sha1-jR/p1IVwo8rnEZ4uKSpkQInMqbk=
+  dependencies:
+    "@form-create/utils" "^2.5.0-alpha.4"
+
+"@form-create/component-elm-tree@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.npm.taobao.org/@form-create/component-elm-tree/download/@form-create/component-elm-tree-2.5.2.tgz#f9217cc9ee0fd19ba80fc38442a002dfe00ae569"
+  integrity sha1-+SF8ye4P0ZuoD8OEQqAC3+AK5Wk=
+  dependencies:
+    "@form-create/utils" "^2.5.0-alpha.4"
+
+"@form-create/component-elm-upload@^2.5.4":
+  version "2.5.4"
+  resolved "https://registry.npm.taobao.org/@form-create/component-elm-upload/download/@form-create/component-elm-upload-2.5.4.tgz#0564d7f7f18c51ae51a7014b0062bcbe676f626d"
+  integrity sha1-BWTX9/GMUa5RpwFLAGK8vmdvYm0=
+  dependencies:
+    "@form-create/utils" "^2.5.0-alpha.4"
+
+"@form-create/component-subform@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.npm.taobao.org/@form-create/component-subform/download/@form-create/component-subform-2.5.2.tgz#c7609ffabbaf09db1fa977f27fc01e1384b92d45"
+  integrity sha1-x2Cf+ruvCdsfqXfyf8AeE4S5LUU=
+
+"@form-create/core@^2.5.5":
+  version "2.5.5"
+  resolved "https://registry.nlark.com/@form-create/core/download/@form-create/core-2.5.5.tgz#372c394fef4a0c3dd75603214722a572b148cc6a"
+  integrity sha1-Nyw5T+9KDD3XVgMhRyKlcrFIzGo=
+  dependencies:
+    "@form-create/utils" "^2.5.0-alpha.4"
+
+"@form-create/element-ui@^2.5.5":
+  version "2.5.5"
+  resolved "https://registry.nlark.com/@form-create/element-ui/download/@form-create/element-ui-2.5.5.tgz#691e9425738d190d79c826dedf007fc990f5f596"
+  integrity sha1-aR6UJXONGQ15yCbe3wB/yZD19ZY=
+  dependencies:
+    "@form-create/component-elm-checkbox" "^2.5.2"
+    "@form-create/component-elm-frame" "^2.5.4"
+    "@form-create/component-elm-group" "^2.5.4"
+    "@form-create/component-elm-radio" "^2.5.2"
+    "@form-create/component-elm-select" "^2.5.2"
+    "@form-create/component-elm-tree" "^2.5.2"
+    "@form-create/component-elm-upload" "^2.5.4"
+    "@form-create/component-subform" "^2.5.2"
+    "@form-create/core" "^2.5.5"
+    "@form-create/utils" "^2.5.0-alpha.4"
+
+"@form-create/utils@^2.5.0-alpha.4":
+  version "2.5.0-alpha.4"
+  resolved "https://registry.npm.taobao.org/@form-create/utils/download/@form-create/utils-2.5.0-alpha.4.tgz?cache=0&sync_timestamp=1614582243861&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40form-create%2Futils%2Fdownload%2F%40form-create%2Futils-2.5.0-alpha.4.tgz#6520f3bbc9ff581036250eabbb0d7df26fe6d20d"
+  integrity sha1-ZSDzu8n/WBA2JQ6ruw198m/m0g0=
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.1.4.tgz?cache=0&sync_timestamp=1603524710662&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40hapi%2Faddress%2Fdownload%2F%40hapi%2Faddress-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
