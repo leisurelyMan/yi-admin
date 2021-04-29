@@ -1,8 +1,8 @@
 <template>
   <div class="app-container">
     <form-create
-      :rule="rule"
       v-model="fApi"
+      :rule="rule"
       :option="options"
       :value.sync="value"
     />
@@ -10,29 +10,58 @@
 </template>
 
 <script>
-import Form from "./_components/Form";
 export default {
-  components: { Form },
   data() {
     return {
       fApi: {},
-      value: { field1: "111", field2: "222", time: "11:11:11" },
+      value: { projectName: "", companyName: "", startDate: "" }, // 这里的value对应下面rule里的field
       options: {
         onSubmit: (formData) => {
-          alert(JSON.stringify(formData));
+          console.log(JSON.stringify(formData)); // 提交按钮默认事件
+        },
+        form: {
+          inline: false, // 切换form子元素的block属性
+          labelPosition: "right",
+          labelWidth: "180px",
+          hideRequiredAsterisk: true,
+          showMessage: true,
+          // disabled: true,
+          size: "big",
+        },
+        info: {
+          //提示消息类型,popover,tooltip
+          type: "popover",
         },
       },
       rule: [
-        { type: "input", field: "field1", title: "field1", value: "aaa" },
-        { type: "input", field: "field2", title: "field2", value: "sss" },
-        { type: "timePicker", field: "time", title: "time", value: "12:12:12" },
+        {
+          type: "input", // 表单类型
+          field: "projectName",
+          title: "项目名称",
+          value: "",
+          validate: [
+            { required: true, message: "请输入项目名称", trigger: "blur" }, // 验证正则
+          ],
+        },
+        {
+          type: "input",
+          field: "companyName",
+          title: "项目公司名称",
+          value: "",
+        },
+        {
+          type: "datePicker",
+          field: "startDate",
+          title: "活动开工日期",
+          value: "",
+        },
         {
           type: "ElButton",
-          title: "修改 field1",
+          title: "修改项目名称",
           native: false,
           on: {
             click: () => {
-              this.rule[0].value += "a";
+              this.rule[0].value += "a"; // 表单事件 this.rule[0]就是第0项的项目名称
             },
           },
           children: ["点击"],
@@ -40,52 +69,8 @@ export default {
       ],
     };
   },
-  methods: {
-    handleClick(tab, event) {
-      console.log(tab, event);
-    },
-    submitForm(form) {
-      console.log(form);
-    },
-    addForm() {
-      const _form = {
-        id: "",
-        bondId: "",
-        projectName: "",
-        companyName: "",
-        projectAddress: "",
-        investmentAmount: "",
-        buildContent: "",
-        reportDocuments: "",
-        scenePhotos: "",
-        buildStatas: "",
-        startDate: "",
-        endDate: "",
-        raisedFunds: "",
-        useOfRaisedFunds: "",
-        supportingDocuments: "",
-        creater: "",
-        createTime: "",
-        statas: 1,
-        updater: "",
-        updateTime: "",
-      };
-      this.dataArray.push(_form);
-    },
-    resetForm() {
-      Object.assign(this.$data, this.$options.data());
-    },
-  },
+  methods: {},
 };
 </script>
 
-<style scoped>
-.line {
-  text-align: center;
-}
-
-/* ::v-deep .el-tabs__item is-top {
-  min-width: 240px;
-  text-align: center;
-} */
-</style>
+<style scoped></style>
