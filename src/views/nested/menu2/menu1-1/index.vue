@@ -14,7 +14,14 @@ export default {
   data() {
     return {
       fApi: {},
-      value: { projectName: "", companyName: "", startDate: "" }, // 这里的value对应下面rule里的field
+      value: {
+        projectName: "",
+        companyName: "",
+        startDate: "",
+        projectAddress: "",
+        buildContent: "",
+        statas: "",
+      }, // 这里的value对应下面rule里的field
       options: {
         onSubmit: (formData) => {
           console.log(JSON.stringify(formData)); // 提交按钮默认事件
@@ -50,10 +57,88 @@ export default {
           value: "",
         },
         {
+          type: "cascader",
+          field: "projectAddress",
+          title: "项目地址",
+          value: ["陕西省", "西安市", "新城区"],
+          props: {
+            options: [
+              {
+                value: "beijing",
+                label: "北京",
+                children: [
+                  {
+                    value: "gugong",
+                    label: "故宫",
+                  },
+                  {
+                    value: "tiantan",
+                    label: "天坛",
+                  },
+                  {
+                    value: "wangfujing",
+                    label: "王府井",
+                  },
+                ],
+              },
+              {
+                value: "jiangsu",
+                label: "江苏",
+                children: [
+                  {
+                    value: "nanjing",
+                    label: "南京",
+                    children: [
+                      {
+                        value: "fuzimiao",
+                        label: "夫子庙",
+                      },
+                    ],
+                  },
+                  {
+                    value: "suzhou",
+                    label: "苏州",
+                    children: [
+                      {
+                        value: "zhuozhengyuan",
+                        label: "拙政园",
+                      },
+                      {
+                        value: "shizilin",
+                        label: "狮子林",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        {
+          type: "select",
+          field: "statas",
+          title: "项目建设状态",
+          value: "1",
+          options: [
+            { value: "1", label: "已建成未投产", disabled: false },
+            { value: "2", label: "已建成已投产", disabled: false },
+          ],
+          props: {
+            // multiple: true,
+          },
+        },
+        {
           type: "datePicker",
           field: "startDate",
           title: "活动开工日期",
           value: "",
+        },
+        {
+          type: "textarea",
+          field: "buildContent",
+          title: "项目建设内容",
+          value: "",
+          autosize: true,
         },
         {
           type: "ElButton",

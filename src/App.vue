@@ -62,4 +62,23 @@ export default {
   .el-tabs__item:not(.is-disabled):hover {
   // color: #fff;
 }
+::v-deep textarea {
+  -webkit-appearance: none;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #606267;
+  display: inline-block;
+  font-size: inherit;
+  min-height: 60px;
+  line-height: 40px;
+  outline: 0;
+  padding: 0 15px;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 100%;
+}
 </style>
