@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <div class="row">
-      <img src="@/assets/login-img.png" class="login-img" />
+      <img src="@/assets/login_left.png" class="login-img" />
       <el-form
         ref="loginForm"
         :model="loginForm"

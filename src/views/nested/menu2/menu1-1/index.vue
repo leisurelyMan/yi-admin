@@ -1,11 +1,20 @@
 <template>
   <div class="app-container">
-    <form-create
-      v-model="fApi"
-      :rule="rule"
-      :option="options"
-      :value.sync="value"
-    />
+    <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick">
+      <el-tab-pane label="募投项目基本信息" name="first">
+        <form-create
+          v-model="form"
+          :rule="rule"
+          :option="options"
+          :value.sync="value"
+        />
+      </el-tab-pane>
+      <el-tab-pane label="考核指标情况" name="second"
+        >考核指标情况1</el-tab-pane
+      >
+
+      <el-tab-pane label="考核指标情况" name="third">考核指标情况2</el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 
@@ -13,7 +22,8 @@
 export default {
   data() {
     return {
-      fApi: {},
+      activeName: "first",
+      form: {},
       value: {
         projectName: "",
         companyName: "",
@@ -21,8 +31,52 @@ export default {
         projectAddress: "",
         buildContent: "",
         statas: "",
+        pic: "",
+        endDate: "",
       }, // 这里的value对应下面rule里的field
       options: {
+        submitBtn: {
+          //类型 primary / success / warning / danger / info / text
+          type: "primary",
+          //尺寸 medium / small / mini
+          size: "medium",
+          //是否朴素按钮
+          plain: false,
+          //是否圆角按钮
+          round: false,
+          //是否圆形按钮
+          circle: false,
+          //是否加载中状态
+          loading: false,
+          //是否禁用状态
+          disabled: false,
+          //图标类名
+          icon: "",
+          //按钮宽度
+          width: "",
+          //是否默认聚焦
+          autofocus: false,
+          //原生 type 属性
+          nativeType: "button",
+          //按钮内容
+          innerText: "提交",
+          //按钮是否显示
+          show: true,
+          //按钮布局规则
+          col: 5,
+        },
+        row: {
+          //栅格间隔
+          gutter: 0,
+          //布局模式，可选 flex，现代浏览器下有效
+          type: undefined,
+          //flex 布局下的垂直排列方式 top/middle/bottom
+          align: undefined,
+          //flex 布局下的水平排列方式 start/end/center/space-around/space-between
+          justify: undefined,
+          //自定义元素标签
+          tag: "div",
+        },
         onSubmit: (formData) => {
           console.log(JSON.stringify(formData)); // 提交按钮默认事件
         },
@@ -49,19 +103,27 @@ export default {
           validate: [
             { required: true, message: "请输入项目名称", trigger: "blur" }, // 验证正则
           ],
+          props: {
+            clearable: true,
+            placeholder: "请输入项目名称",
+          },
         },
         {
           type: "input",
           field: "companyName",
           title: "项目公司名称",
           value: "",
+          props: {
+            placeholder: "项目公司名称",
+          },
         },
         {
           type: "cascader",
           field: "projectAddress",
-          title: "项目地址",
+          title: "项目地址(省市区县)",
           value: ["陕西省", "西安市", "新城区"],
           props: {
+            placeholder: "选择项目地址",
             options: [
               {
                 value: "beijing",
@@ -115,6 +177,39 @@ export default {
           },
         },
         {
+          type: "textarea",
+          field: "buildContent",
+          title: "项目建设内容",
+          value: "",
+          autosize: true,
+          props: {
+            placeholder: "请填写项目建设内容",
+            autosize: { minRows: 2, maxRows: 6 },
+          },
+        },
+        {
+          type: "upload",
+          field: "pic",
+          title: "上传可研报告或者项目设",
+          value: [
+            "http://img1.touxiang.cn/uploads/20131030/30-075657_191.jpg",
+            "http://img1.touxiang.cn/uploads/20131030/30-075657_191.jpg",
+          ],
+          autosize: true,
+          props: {
+            type: "select",
+            uploadType: "image",
+            action: "/upload.php", // 必选参数，上传的地址
+            name: "pic",
+            multiple: true,
+            accept: "image\/*",
+            limit: 1,
+            onSuccess: function(res, file) {
+              file.url = res.data.filePath;
+            },
+          },
+        },
+        {
           type: "select",
           field: "statas",
           title: "项目建设状态",
@@ -124,21 +219,20 @@ export default {
             { value: "2", label: "已建成已投产", disabled: false },
           ],
           props: {
-            // multiple: true,
+            placeholder: "请选择项目建设状态",
           },
         },
         {
           type: "datePicker",
           field: "startDate",
-          title: "活动开工日期",
+          title: "项目开工日期",
           value: "",
         },
         {
-          type: "textarea",
-          field: "buildContent",
-          title: "项目建设内容",
+          type: "datePicker",
+          field: "endDate",
+          title: "项目开工日期",
           value: "",
-          autosize: true,
         },
         {
           type: "ElButton",
@@ -154,7 +248,11 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    handleClick(tab, event) {
+      console.log(tab, event);
+    },
+  },
 };
 </script>
 
