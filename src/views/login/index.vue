@@ -75,11 +75,11 @@ export default {
   name: "Login",
   data() {
     const validateUsername = (rule, value, callback) => {
-      // if (!validUsername(value)) {
-      //   callback(new Error("Please enter the correct user name"));
-      // } else {
-      //   callback();
-      // }
+      if (!validUsername(value)) {
+        callback(new Error("Please enter the correct user name"));
+      } else {
+        callback();
+      }
     };
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
@@ -127,26 +127,26 @@ export default {
       });
     },
     handleLogin() {
-      // this.$refs.loginForm.validate((valid) => {
-      //   if (valid) {
-      this.loading = true;
-      this.$store
-        .dispatch("user/login", this.loginForm)
-        .then(() => {
-          console.log(222);
-          this.$router.push({ path: this.redirect || "/" });
-          this.loading = false;
-        })
-        .catch((err) => {
-          console.log(err);
-          this.loading = false;
-        });
-      //   } else {
-      //     console.log("error submit!!");
-      //     return false;
-      //   }
-      // });
-      // console.log(555);
+      this.$refs.loginForm.validate((valid) => {
+        if (valid) {
+          this.loading = true;
+          this.$store
+            .dispatch("user/login", this.loginForm)
+            .then(() => {
+              console.log(222);
+              this.$router.push({ path: this.redirect || "/" });
+              this.loading = false;
+            })
+            .catch((err) => {
+              console.log(err);
+              this.loading = false;
+            });
+        } else {
+          console.log("error submit!!");
+          return false;
+        }
+      });
+      console.log(555);
     },
   },
 };
