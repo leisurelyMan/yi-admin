@@ -55,6 +55,8 @@ export default {
 }
 ::v-deep .el-tabs--border-card > .el-tabs__header .el-tabs__item {
   color: #fff;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 ::v-deep
   .el-tabs--border-card
@@ -80,5 +82,43 @@ export default {
   -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   width: 100%;
+}
+
+::v-deep .el-collapse-item__header {
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+::v-deep .special-class-0 .el-collapse-item__header {
+  background-color: #444;
+}
+::v-deep .special-class-1 .el-collapse-item__header {
+  background-color: #3eb066;
+}
+::v-deep .el-collapse-item__content {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+}
+::v-deep .special-class-0 .el-tabs--border-card > .el-tabs__header {
+  background-color: #444;
+  border-radius: 0;
+}
+::v-deep .special-class-1 .el-tabs--border-card > .el-tabs__header {
+  background-color: #3eb066;
+}
+::v-deep .el-tabs--border-card > .el-tabs__header .el-tabs__item {
+  color: #fff;
+  margin: 0 15px;
+}
+::v-deep .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
+  color: #333;
+}
+::v-deep .el-tabs--border-card {
+  border: none;
+}
+::v-deep .el-tabs__content {
+  box-sizing: border-box;
+  border: 1px solid #dcdfe6;
 }
 </style>

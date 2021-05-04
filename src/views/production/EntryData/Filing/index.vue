@@ -32,7 +32,10 @@ export default {
         investmentAmount: "",
         buildContent: "",
         statas: "",
-        pic: "",
+        pic: [
+          "http://img1.touxiang.cn/uploads/20131030/30-075657_191.jpg",
+          "http://img1.touxiang.cn/uploads/20131030/30-075657_191.jpg",
+        ],
         endDate: "",
         raisedFunds: "",
         purpose: ["1", "2"],
@@ -62,7 +65,7 @@ export default {
           //原生 type 属性
           nativeType: "button",
           //按钮内容
-          innerText: "提交",
+          innerText: "确定",
           //按钮是否显示
           show: true,
           //按钮布局规则
@@ -203,10 +206,6 @@ export default {
           type: "upload",
           field: "pic",
           title: "上传可研报告或者项目设",
-          value: [
-            "http://img1.touxiang.cn/uploads/20131030/30-075657_191.jpg",
-            "http://img1.touxiang.cn/uploads/20131030/30-075657_191.jpg",
-          ],
           autosize: true,
           props: {
             type: "select",
@@ -270,17 +269,17 @@ export default {
             { value: "5", label: "其他" },
           ],
         },
-        {
-          type: "ElButton",
-          title: "修改项目名称",
-          native: false,
-          on: {
-            click: () => {
-              this.rule[0].value += "a"; // 表单事件 this.rule[0]就是第0项的项目名称
-            },
-          },
-          children: ["点击"],
-        },
+        // {
+        //   type: "ElButton",
+        //   title: "修改项目名称",
+        //   native: false,
+        //   on: {
+        //     click: () => {
+        //       this.rule[0].value += "a"; // 表单事件 this.rule[0]就是第0项的项目名称
+        //     },
+        //   },
+        //   children: ["点击"],
+        // },
       ],
     };
   },
