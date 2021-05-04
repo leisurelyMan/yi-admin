@@ -6,30 +6,6 @@ Vue.use(Router);
 /* Layout */
 import Layout from "@/layout";
 
-/**
- * Note: sub-menu only appear when route children.length >= 1
- * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
- *
- * hidden: true                   if set true, item will not show in the sidebar(default is false)
- * alwaysShow: true               if set true, will always show the root menu
- *                                if not set alwaysShow, when item has more than one children route,
- *                                it will becomes nested mode, otherwise not show the root menu
- * redirect: noRedirect           if set noRedirect will no redirect in the breadcrumb
- * name:'router-name'             the name is used by <keep-alive> (must set!!!)
- * meta : {
-    roles: ['admin','editor']    control the page roles (you can set multiple roles)
-    title: 'title'               the name show in sidebar and breadcrumb (recommend set)
-    icon: 'svg-name'/'el-icon-x' the icon show in the sidebar
-    breadcrumb: false            if set false, the item will hidden in breadcrumb(default is true)
-    activeMenu: '/example/list'  if set path, the sidebar will highlight the path you set
-  }
- */
-
-/**
- * constantRoutes
- * a base page that does not have permission requirements
- * all roles can be accessed
- */
 export const constantRoutes = [
   {
     path: "/login",
@@ -58,56 +34,59 @@ export const constantRoutes = [
   },
 
   {
-    path: "/nested",
+    path: "/production",
     component: Layout,
-    redirect: "/nested/menu1",
-    name: "Nested",
+    redirect: "/production/menu1",
+    name: "production",
     meta: {
       title: "产品",
-      icon: "nested",
+      icon: "production",
     },
     children: [
       {
-        path: "menu2",
-        component: () => import("@/views/nested/menu2/index"), // Parent router-view
+        path: "EntryData",
+        component: () => import("@/views/production/EntryData/index"), // Parent router-view
         name: "Menu1",
         meta: { title: "数据录入" },
         children: [
           {
-            path: "menu1-1",
-            component: () => import("@/views/nested/menu2/menu1-1"),
-            name: "Menu1-1",
+            path: "Filing",
+            component: () => import("@/views/production/EntryData/Filing"),
+            name: "Filing",
             meta: { title: "建档期1" },
           },
           {
-            path: "menu1-2",
-            component: () => import("@/views/nested/menu2/menu1-2"),
-            name: "Menu1-2",
+            path: "FilingBefore",
+            component: () =>
+              import("@/views/production/EntryData/FilingBefore"),
+            name: "FilingBefore",
             meta: { title: "建档前" },
           },
           {
-            path: "menu1-3",
-            component: () => import("@/views/nested/menu2/menu1-3"),
-            name: "Menu1-3",
+            path: "Filing2",
+            component: () => import("@/views/production/EntryData/Filing2"),
+            name: "Filing2",
             meta: { title: "建档期2" },
           },
         ],
       },
       {
-        path: "menu1",
-        component: () => import("@/views/nested/menu1/index"),
-        name: "Menu2",
+        path: "PresentationData",
+        component: () => import("@/views/production/PresentationData/index"),
+        name: "PresentationData",
         meta: { title: "数据展示" },
         children: [
           {
             path: "menu1-1",
-            component: () => import("@/views/nested/menu1/menu1-1"),
+            component: () =>
+              import("@/views/production/PresentationData/menu1-1"),
             name: "Menu1-1",
             meta: { title: "建档期1" },
           },
           {
             path: "menu1-3",
-            component: () => import("@/views/nested/menu1/menu1-3"),
+            component: () =>
+              import("@/views/production/PresentationData/menu1-3"),
             name: "Menu1-3",
             meta: { title: "建档前" },
           },
@@ -115,26 +94,28 @@ export const constantRoutes = [
       },
       {
         path: "InstitutionalData",
-        component: () => import("@/views/nested/InstitutionalData/index"),
+        component: () => import("@/views/production/InstitutionalData/index"),
         name: "InstitutionalData",
-        meta: { title: "数据流程" },
+        meta: { title: "机构数据" },
         children: [
           {
             path: "Filing",
-            component: () => import("@/views/nested/InstitutionalData/Filing"),
+            component: () =>
+              import("@/views/production/InstitutionalData/Filing"),
             name: "Filing",
             meta: { title: "建档期1" },
           },
           {
             path: "FilingBefore",
             component: () =>
-              import("@/views/nested/InstitutionalData/FilingBefore"),
+              import("@/views/production/InstitutionalData/FilingBefore"),
             name: "FilingBefore",
             meta: { title: "建档前" },
           },
           {
             path: "Filing2",
-            component: () => import("@/views/nested/InstitutionalData/Filing2"),
+            component: () =>
+              import("@/views/production/InstitutionalData/Filing2"),
             name: "Filing2",
             meta: { title: "建档期2" },
           },
