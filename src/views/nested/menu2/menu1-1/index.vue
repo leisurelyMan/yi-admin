@@ -29,10 +29,13 @@ export default {
         companyName: "",
         startDate: "",
         projectAddress: "",
+        investmentAmount: "",
         buildContent: "",
         statas: "",
         pic: "",
         endDate: "",
+        raisedFunds: "",
+        purpose: ["1", "2"],
       }, // 这里的value对应下面rule里的field
       options: {
         submitBtn: {
@@ -177,6 +180,15 @@ export default {
           },
         },
         {
+          type: "input",
+          field: "investmentAmount",
+          title: "项目总投资金额",
+          value: "",
+          props: {
+            placeholder: "请输入项目总投资金额",
+          },
+        },
+        {
           type: "textarea",
           field: "buildContent",
           title: "项目建设内容",
@@ -231,9 +243,45 @@ export default {
         {
           type: "datePicker",
           field: "endDate",
-          title: "项目开工日期",
+          title: "项目完工日期",
           value: "",
         },
+        {
+          type: "input",
+          field: "raisedFunds",
+          title: "拟使用募集资金（万元）",
+          value: "",
+          props: {
+            placeholder: "请输入拟使用募集资金",
+          },
+        },
+        {
+          type: "checkbox",
+          field: "purpose",
+          title: "募集资金用途：",
+          props: {
+            placeholder: "请输入拟使用募集资金",
+          },
+          options: [
+            { value: "1", label: "建设" },
+            { value: "2", label: "运营" },
+            { value: "3", label: "偿还贷款" },
+            { value: "4", label: "偿还债券" },
+            { value: "5", label: "其他" },
+          ],
+        },
+        // {
+        //   type: "checkbox",
+        //   title: "标签",
+        //   field: "label",
+        //   value: ["1", "2", "3"],
+        //   options: [
+        //     { value: "1", label: "好用" },
+        //     { value: "2", label: "方便" },
+        //     { value: "3", label: "实用" },
+        //     { value: "4", label: "有效" },
+        //   ],
+        // },
         {
           type: "ElButton",
           title: "修改项目名称",
