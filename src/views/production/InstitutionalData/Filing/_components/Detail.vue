@@ -1,65 +1,22 @@
 <template>
   <div style="padding:10px;">
     <div class="container">
-      <div class="row bold">{{ detail.title }}</div>
+      <!-- <div class="row bold">{{ detail.title }}</div> -->
       <div class="row">
-        <div class="row-item">发行人是否具备发行本:</div>
-        <div class="row-item">{{ check[detail.check] }}</div>
-        <el-tooltip
-          effect="light"
-          content="上传机构Logo后，将在该机构下的客户AI-MDT报告封面进行展示"
-          placement="right"
-        >
-          <i class="icon el-icon-question"></i>
-        </el-tooltip>
+        <div class="row-item">项目名称:</div>
+        <div class="row-item">{{ detail.projectName }}</div>
       </div>
       <div class="row">
-        <div class="row-item">发行人发行本期绿债:</div>
-        <div class="row-item">{{ check[detail.check] }}</div>
-        <el-tooltip
-          effect="light"
-          content="上传机构Logo后，将在该机构下的客户AI-MDT报告封面进行展示"
-          placement="right"
-        >
-          <i class="icon el-icon-question"></i>
-        </el-tooltip>
+        <div class="row-item">项目公司名称:</div>
+        <div class="row-item">{{ detail.company }}</div>
       </div>
       <div class="row">
-        <div class="row-item">本次债券发行是否符合:</div>
-        <div class="row-item">{{ check[detail.check] }}</div>
-        <el-tooltip
-          effect="light"
-          content="上传机构Logo后，将在该机构下的客户AI-MDT报告封面进行展示"
-          placement="right"
-        >
-          <i class="icon el-icon-question"></i>
-        </el-tooltip>
+        <div class="row-item">公司地址:</div>
+        <div class="row-item">{{ detail.address }}</div>
       </div>
       <div class="row">
-        <div class="row-item">《募集说明书的内容》和:</div>
-        <div class="row-item">{{ check[detail.check] }}</div>
-        <el-tooltip
-          effect="light"
-          content="上传机构Logo后，将在该机构下的客户AI-MDT报告封面进行展示"
-          placement="right"
-        >
-          <i class="icon el-icon-question"></i>
-        </el-tooltip>
-      </div>
-      <div class="row">
-        <div class="row-item">为本期绿色债券发行提:</div>
-        <div class="row-item">{{ check[detail.check] }}</div>
-        <el-tooltip
-          effect="light"
-          content="上传机构Logo后，将在该机构下的客户AI-MDT报告封面进行展示"
-          placement="right"
-        >
-          <i class="icon el-icon-question"></i>
-        </el-tooltip>
-      </div>
-      <div class="row">
-        <div class="row-item">发行人不存在对本次发:</div>
-        <div class="row-item">{{ check[detail.check] }}</div>
+        <div class="row-item">总投资金额(万元):</div>
+        <div class="row-item">{{ detail.amount }}</div>
         <el-tooltip
           effect="light"
           content="上传机构Logo后，将在该机构下的客户AI-MDT报告封面进行展示"
@@ -81,12 +38,7 @@ export default {
     },
   },
   data() {
-    return {
-      check: {
-        true: "是",
-        false: "否",
-      },
-    };
+    return {};
   },
 };
 </script>
@@ -101,9 +53,8 @@ export default {
   .row {
     display: flex;
     align-items: center;
-    &-item:first-child {
+    div:nth-child(1) {
       min-width: 150px;
-      margin: 5px 10px;
     }
     .icon {
       font-size: 16px;

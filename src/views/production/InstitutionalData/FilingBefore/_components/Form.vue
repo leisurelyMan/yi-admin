@@ -1,22 +1,14 @@
 <template>
   <div style="padding:10px;">
     <el-form ref="form" :model="form" label-width="180px">
-      <el-form-item
-        prop="name"
-        label="项目名称"
-        :rules="[{ required: true, message: '活动名称不能为空' }]"
-      >
+      <el-form-item prop="name" label="项目名称">
         <el-col :span="12">
-          <el-input v-model="form.name"></el-input>
+          <span>{{ formData.name }}</span>
         </el-col>
       </el-form-item>
-      <el-form-item
-        prop="company"
-        label="项目公司名称"
-        :rules="[{ required: true, message: '活动名称不能为空' }]"
-      >
+      <el-form-item prop="company" label="项目公司名称">
         <el-col :span="12">
-          <el-input v-model="form.company"></el-input>
+          <span>{{ formData.company }}</span>
         </el-col>
       </el-form-item>
       <el-form-item label="活动区域">
@@ -29,18 +21,14 @@
         >
         </el-cascader>
       </el-form-item>
-      <el-form-item
-        prop="money"
-        label="总投资金额（万元）"
-        :rules="[{ required: true, message: '总投资金额不能为空' }]"
-      >
+      <el-form-item prop="money" label="总投资金额（万元）">
         <el-col :span="12">
-          <el-input v-model.number="form.money"></el-input>
+          <span>{{ formData.money }}</span>
         </el-col>
       </el-form-item>
       <el-form-item label="项目建设内容">
         <el-col :span="12">
-          <el-input type="textarea" v-model="form.desc"></el-input>
+          <span>{{ formData.desc }}</span>
         </el-col>
       </el-form-item>
 
@@ -59,34 +47,28 @@
         </el-upload>
       </el-form-item>
       <el-form-item label="项目建设状态">
-        <el-select v-model="form.status" placeholder="请选择项目建设状态">
+        <el-select
+          v-model="formData.status"
+          placeholder="请选择项目建设状态"
+          disabled
+        >
           <el-option label="已建成未投产" value="1"></el-option>
           <el-option label="已建成已投产" value="2"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="活动开工日期">
         <el-col :span="12">
-          <el-date-picker
-            type="date"
-            placeholder="选择日期"
-            v-model="form.date1"
-            style="width: 100%;"
-          ></el-date-picker>
+          <span>{{ formData.date1 }}</span>
         </el-col>
       </el-form-item>
       <el-form-item label="活动完工日期">
         <el-col :span="12">
-          <el-date-picker
-            type="date"
-            placeholder="选择日期"
-            v-model="form.date2"
-            style="width: 100%;"
-          ></el-date-picker>
+          <span>{{ formData.date2 }}</span>
         </el-col>
       </el-form-item>
       <el-form-item prop="fundRaising" label="拟使用募集资金（万元）">
         <el-col :span="12">
-          <el-input v-model.number="form.fundRaising"></el-input>
+          <span>{{ formData.fundRaising }}</span>
         </el-col>
       </el-form-item>
       <el-form-item label="募集资金用途" prop="deliveryWay">
@@ -124,10 +106,10 @@
 <script>
 import { regionData, CodeToText } from "element-china-area-data";
 export default {
-  name: "Detail",
+  name: "Form",
 
   props: {
-    detail: {
+    formData: {
       type: Object,
       default: () => {},
     },

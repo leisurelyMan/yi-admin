@@ -32,10 +32,7 @@ export default {
         investmentAmount: "",
         buildContent: "",
         statas: "",
-        pic: [
-          "http://img1.touxiang.cn/uploads/20131030/30-075657_191.jpg",
-          "http://img1.touxiang.cn/uploads/20131030/30-075657_191.jpg",
-        ],
+        pic: [],
         endDate: "",
         raisedFunds: "",
         purpose: ["1", "2"],
@@ -237,13 +234,17 @@ export default {
           type: "datePicker",
           field: "startDate",
           title: "项目开工日期",
-          value: "",
+          props: {
+            placeholder: "请选择项目开工日期",
+          },
         },
         {
           type: "datePicker",
           field: "endDate",
           title: "项目完工日期",
-          value: "",
+          props: {
+            placeholder: "请选择项目完工日期",
+          },
         },
         {
           type: "input",

@@ -17,7 +17,7 @@ export default {
   background-color: #444;
   box-sizing: border-box;
   padding: 20px 20px 0;
-  border-radius: 5px;
+  // border-radius: 5px;
 }
 ::v-deep .el-tabs__item {
   min-width: 240px;
@@ -97,6 +97,18 @@ export default {
 ::v-deep .special-class-1 .el-collapse-item__header {
   background-color: #3eb066;
 }
+::v-deep .special-class-2 .el-collapse-item__header {
+  background-color: #368dac;
+}
+::v-deep .special-class-3 .el-collapse-item__header {
+  background-color: #1668d8;
+}
+::v-deep .special-class-4 .el-collapse-item__header {
+  background-color: #5a638a;
+}
+::v-deep .special-class-5 .el-collapse-item__header {
+  background-color: #444444;
+}
 ::v-deep .el-collapse-item__content {
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
 }
@@ -120,5 +132,10 @@ export default {
 ::v-deep .el-tabs__content {
   box-sizing: border-box;
   border: 1px solid #dcdfe6;
+}
+.el-tabs--border-card
+  > .el-tabs__header
+  .el-tabs__item:not(.is-disabled):hover {
+  // color: #333;
 }
 </style>
