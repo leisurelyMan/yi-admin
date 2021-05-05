@@ -8,7 +8,8 @@ import locale from "element-ui/lib/locale/lang/en"; // lang i18n
 import formCreate from "@form-create/element-ui";
 Vue.use(formCreate);
 import "@/styles/index.scss"; // global css
-
+// import echarts from "echarts";
+// Vue.prototype.$echarts = echarts;
 import App from "./App";
 import store from "./store";
 import router from "./router";
