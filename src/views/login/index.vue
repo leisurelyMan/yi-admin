@@ -1,7 +1,9 @@
 <template>
   <div class="login-container">
     <div class="row">
-      <img src="@/assets/login_left.png" class="login-img" />
+      <div class="img-box">
+        <img src="@/assets/login_left.png" class="login-img" />
+      </div>
       <el-form
         ref="loginForm"
         :model="loginForm"
@@ -21,7 +23,7 @@
           <el-input
             ref="username"
             v-model="loginForm.address"
-            placeholder="Username"
+            placeholder="请输入用户名"
             name="username"
             type="text"
             tabindex="1"
@@ -38,7 +40,7 @@
             ref="password"
             v-model="loginForm.privateKey"
             :type="passwordType"
-            placeholder="Password"
+            placeholder="请输入密码"
             name="password"
             tabindex="2"
             auto-complete="on"
@@ -50,21 +52,22 @@
             />
           </span>
         </el-form-item>
+        <div class="text">
+          <el-checkbox v-model="loginForm.isCheck"></el-checkbox>
+          <span class="text-item">已阅读，同意</span>
+          <span class="text-link">《绿色债券共识注册协议》</span>
+        </div>
 
         <el-button
           :loading="loading"
           type="primary"
           style="width:100%;margin-bottom:30px;"
           @click.native.prevent="handleLogin"
-          >Login</el-button
+          >登录</el-button
         >
-
-        <!-- <div class="tips">
-          <span style="margin-right:20px;">username: admin</span>
-          <span> password: any</span>
-        </div> -->
       </el-form>
     </div>
+    <div class="footer"></div>
   </div>
 </template>
 
@@ -93,6 +96,7 @@ export default {
         address: "publisher",
         privateKey:
           "11923539375679845325252228777242960192055190129810004269861387854185139068213",
+        isCheck: true,
       },
       loginRules: {
         address: [
@@ -146,7 +150,6 @@ export default {
           return false;
         }
       });
-      console.log(555);
     },
   },
 };
@@ -168,20 +171,22 @@ $cursor: #fff;
 
 /* reset element-ui css */
 .login-container {
+  position: relative;
   .el-input {
     display: inline-block;
     height: 47px;
     width: 85%;
 
     input {
-      background: transparent;
+      // background: transparent;
       border: 0px;
       -webkit-appearance: none;
       border-radius: 0px;
       padding: 12px 5px 12px 15px;
-      color: $light_gray;
+      // color: $light_gray;
+      color: #333;
       height: 47px;
-      caret-color: $cursor;
+      // caret-color: $cursor;
 
       &:-webkit-autofill {
         box-shadow: 0 0 0px 1000px $bg inset !important;
@@ -191,8 +196,8 @@ $cursor: #fff;
   }
 
   .el-form-item {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e5e5;
+    // background: rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     color: #454545;
   }
@@ -210,9 +215,11 @@ $light_gray: #eee;
   width: 100%;
   background-color: $bg;
   overflow: hidden;
-
   .row {
     display: flex;
+    .img-box {
+      padding: 50px;
+    }
   }
   .login-img {
     width: 500px;
@@ -222,12 +229,18 @@ $light_gray: #eee;
     position: relative;
     width: 420px;
     max-width: 100%;
-    padding: 35px;
+    padding: 80px;
     margin: 140px auto;
     overflow: hidden;
-    background-color: #fff;
+    background: url(../../assets/login_bg.png) no-repeat;
+    background-size: 100% 100%;
+    width: 480px;
+    height: 460px;
+    position: absolute;
+    right: 120px;
+    top: 20px;
+    z-index: 10;
   }
-
   .tips {
     font-size: 14px;
     color: #fff;
@@ -272,6 +285,29 @@ $light_gray: #eee;
   }
   ::v-deep .el-button--primary {
     background-color: #12a73f;
+  }
+  .footer {
+    position: fixed;
+    height: 70px;
+    bottom: 0px;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    line-height: 30px;
+    height: 66px;
+    border-top: 1px solid #dfdfdf;
+  }
+  .text {
+    font-size: 14px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    &-item {
+      margin-left: 10px;
+    }
+    &-link {
+      color: #118f37;
+    }
   }
 }
 </style>
