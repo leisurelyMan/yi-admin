@@ -60,14 +60,14 @@ export const constantRoutes = [
             component: () =>
               import("@/views/production/EntryData/FilingBefore"),
             name: "FilingBefore",
-            meta: { title: "建档前" },
+            meta: { title: "注册前" },
           },
-          {
-            path: "Filing2",
-            component: () => import("@/views/production/EntryData/Filing2"),
-            name: "Filing2",
-            meta: { title: "建档期2" },
-          },
+          // {
+          //   path: "Filing2",
+          //   component: () => import("@/views/production/EntryData/Filing2"),
+          //   name: "Filing2",
+          //   meta: { title: "建档期2" },
+          // },
         ],
       },
       {
@@ -112,13 +112,13 @@ export const constantRoutes = [
             name: "FilingBefore",
             meta: { title: "建档前" },
           },
-          {
-            path: "Filing2",
-            component: () =>
-              import("@/views/production/InstitutionalData/Filing2"),
-            name: "Filing2",
-            meta: { title: "建档期2" },
-          },
+          // {
+          //   path: "Filing2",
+          //   component: () =>
+          //     import("@/views/production/InstitutionalData/Filing2"),
+          //   name: "Filing2",
+          //   meta: { title: "建档期2" },
+          // },
         ],
       },
     ],

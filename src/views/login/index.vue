@@ -148,6 +148,11 @@ export default {
     handleLogin() {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
+          if (!this.loginForm.isCheck) {
+            this.$message.error("请同意绿色债券共识注册协议！");
+            return;
+          }
+          // this.$router.push({ path: this.redirect || "/" });
           this.loading = true;
           this.$store
             .dispatch("user/login", this.loginForm)
@@ -169,7 +174,7 @@ export default {
     showModal() {
       this.modalStatus = true;
     },
-    // 关闭成功提交体检报告回调
+    // 关闭弹窗
     closeModal() {},
   },
 };

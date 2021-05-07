@@ -9,11 +9,7 @@
           :value.sync="value"
         />
       </el-tab-pane>
-      <el-tab-pane label="考核指标情况" name="second"
-        >考核指标情况1</el-tab-pane
-      >
-
-      <el-tab-pane label="考核指标情况" name="third">考核指标情况2</el-tab-pane>
+      <el-tab-pane label="考核指标情况" name="second">考核指标情况</el-tab-pane>
     </el-tabs>
   </div>
 </template>
@@ -86,7 +82,7 @@ export default {
         form: {
           inline: false, // 切换form子元素的block属性
           labelPosition: "right",
-          labelWidth: "180px",
+          labelWidth: "200px",
           hideRequiredAsterisk: true,
           showMessage: true,
           // disabled: true,
@@ -202,7 +198,7 @@ export default {
         {
           type: "upload",
           field: "pic",
-          title: "上传可研报告或者项目设",
+          title: "上传可研报告或项目设计文件：",
           autosize: true,
           props: {
             type: "select",
