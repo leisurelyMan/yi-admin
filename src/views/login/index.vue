@@ -55,7 +55,9 @@
         <div class="text">
           <el-checkbox v-model="loginForm.isCheck"></el-checkbox>
           <span class="text-item">已阅读，同意</span>
-          <span class="text-link">《绿色债券共识注册协议》</span>
+          <span class="text-link" @click="showModal"
+            >《绿色债券共识注册协议》</span
+          >
         </div>
 
         <el-button
@@ -67,15 +69,27 @@
         >
       </el-form>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+      <p class="copyright">集团公司 版权所有 Copyright © 2017-2025</p>
+      <p class="copyright">
+        京ICP备<a
+          href="https://beian.miit.gov.cn"
+          target="_blank"
+          class="default-link"
+          >17045942</a
+        >号
+      </p>
+    </div>
+    <Modal :modal-status.sync="modalStatus" @closeModal="closeModal" />
   </div>
 </template>
 
 <script>
 import { validUsername } from "@/utils/validate";
-
+import Modal from "./_components/Modal";
 export default {
   name: "Login",
+  components: { Modal },
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
@@ -109,6 +123,7 @@ export default {
       loading: false,
       passwordType: "password",
       redirect: undefined,
+      modalStatus: false,
     };
   },
   watch: {
@@ -151,6 +166,11 @@ export default {
         }
       });
     },
+    showModal() {
+      this.modalStatus = true;
+    },
+    // 关闭成功提交体检报告回调
+    closeModal() {},
   },
 };
 </script>
@@ -297,6 +317,16 @@ $light_gray: #eee;
     line-height: 30px;
     height: 66px;
     border-top: 1px solid #dfdfdf;
+    .copyright {
+      line-height: 27px;
+      text-align: center;
+      color: #000;
+      font-size: 14px;
+      margin: 0;
+    }
+    .default-link {
+      color: #000;
+    }
   }
   .text {
     font-size: 14px;
@@ -307,6 +337,7 @@ $light_gray: #eee;
     }
     &-link {
       color: #118f37;
+      cursor: pointer;
     }
   }
 }
