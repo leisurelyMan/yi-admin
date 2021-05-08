@@ -74,3 +74,14 @@ Modern browsers and Internet Explorer 10+.
 [MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
 
 Copyright (c) 2017-present PanJiaChen
+
+- api --请求方法
+- assets ---静态文件目录
+- components ----通用组件
+- icons ---svg 图标
+- layout --- 项目布局主要分为头部,左边目录右边视图
+- router ---路由文件，关联项目路由配置
+- store ---项目全局状态管理 如用户名 token 在这里管理 各个组件之间的通信也可以通过它完成
+- styles ---通用的样式文件
+- utils ---工具包 如正则，url 取参数等通用方法
+- views --- 视图文件，主要视图文件再此管理

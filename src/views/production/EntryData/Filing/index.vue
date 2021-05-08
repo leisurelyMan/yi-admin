@@ -106,6 +106,9 @@ export default {
             clearable: true,
             placeholder: "请输入项目名称",
           },
+          col: {
+            span: 12,
+          },
         },
         {
           type: "input",
@@ -266,23 +269,12 @@ export default {
             { value: "5", label: "其他" },
           ],
         },
-        // {
-        //   type: "ElButton",
-        //   title: "修改项目名称",
-        //   native: false,
-        //   on: {
-        //     click: () => {
-        //       this.rule[0].value += "a"; // 表单事件 this.rule[0]就是第0项的项目名称
-        //     },
-        //   },
-        //   children: ["点击"],
-        // },
       ],
     };
   },
   methods: {
-    handleClick(tab, event) {
-      console.log(tab, event);
+    handleClick(tab) {
+      console.log(tab);
     },
   },
 };
